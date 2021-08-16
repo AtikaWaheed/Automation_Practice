@@ -1,0 +1,9 @@
+{
+    "watchForFileChanges": false,
+    "env": {
+        "login_newid": "test@gmail.com",
+        "login_usedid": "abc@gmail.com"}
+}
+
+
+
