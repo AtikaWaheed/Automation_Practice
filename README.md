@@ -4,9 +4,6 @@ AutomationPractice Tests
 
 End-to-end tests for AutomationPratice
 
-
-Please Refer **Test_Scenarios.md** 
-
 Pre reqs:
 ============================================
 1- Create project directory
@@ -47,8 +44,4 @@ c - registrationtestFlow.spec.js
 
 d - fakeApi-tests.spec.js
 
-e - fakeAPI-Tests2.spec.js
-
-
-
-
+e - fakeAPI-Tests2.spec.j
