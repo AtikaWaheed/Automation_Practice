@@ -1,30 +1,27 @@
 /// <reference types="Cypress" />
 
-import { baseAPIUrl } from '../variables.js'
+import { baseAPIUrl } from '../variables.js';
 
-describe("Testing API Endpoints Using Cypress", ()=> {
+describe("Testing API Endpoints Using Cypress", () => {
  
-
     it('GET Request: Validate idBook parameter', () => {
         const randomNum = Math.floor(Math.random() * 5)
-        cy.log(randomNum)
         cy.request(`${baseAPIUrl}/api/v1/Authors/authors/books/${randomNum}`)
         .its('body')
         .each(value=>{
-            expect(value).to.have.property('idBook', randomNum)
+            expect(value).to.have.property('idBook', randomNum);
         });
-    });
+    })
 
     it('GET Request: Validate id parameter', () => {
-        const randomNum = Math.floor(Math.random() * 10)
-        cy.log(randomNum)
+        const randomNum = Math.floor(Math.random() * 10);
         cy.request(`${baseAPIUrl}/api/v1/Authors/${randomNum}`)
         .then((response)=>{
-            expect(response.body).to.have.property('id', randomNum)
-            expect(response.status).to.eq(200)
-            expect(response).to.have.property('headers')
+            expect(response.body).to.have.property('id', randomNum);
+            expect(response.status).to.eq(200);
+            expect(response).to.have.property('headers');
         });
-    });
+    })
 
     it('POST Request: /api/v1/Authors', () => {
         cy.request({
@@ -36,16 +33,14 @@ describe("Testing API Endpoints Using Cypress", ()=> {
                 "firstName": "string",
                 "lastName": "string"
             }
-        }).then((response)=> {
-            expect(response.status).to.eq(200)
-            expect(response).to.have.property('headers')
+        }).then((response) => {
+            expect(response.status).to.eq(200);
+            expect(response).to.have.property('headers');
         });
-        
-    });
+    })
 
     it('PUT Request: Validate {id} parameter', () => {
-        const randomNum = Math.floor(Math.random() * 10)
-        cy.log(randomNum)
+        const randomNum = Math.floor(Math.random() * 10);
         cy.request({
             method: 'PUT',
             url: `${baseAPIUrl}/api/v1/Authors/${randomNum}`,
@@ -56,14 +51,13 @@ describe("Testing API Endpoints Using Cypress", ()=> {
                 "lastName": "string"
             }
         }).then((response)=> {
-            expect(response.status).to.eq(200)
-            expect(response).to.have.property('headers')
+            expect(response.status).to.eq(200);
+            expect(response).to.have.property('headers');
         });
-    });
+    })
 
-    it.only('DELETE Request: Validate {id} parameter', () => {
-        const randomNum = Math.floor(Math.random() * 10)
-        cy.log(randomNum)
+    it('DELETE Request: Validate {id} parameter', () => {
+        const randomNum = Math.floor(Math.random() * 10);
         cy.request({
             method: 'DELETE',
             url: `${baseAPIUrl}/api/v1/Authors/${randomNum}`,
@@ -72,6 +66,5 @@ describe("Testing API Endpoints Using Cypress", ()=> {
             expect(response).to.have.property('headers')
             expect(response.body).to.be.empty;
         });
-    });
-
-});
+    })
+})

@@ -1,23 +1,22 @@
 /// <reference types="Cypress" />
 
-import { ValidateLandingPage } from "./page-objects.js/mainLandingPage.spec.js"
-import { baseUrl } from '../variables.js'
+import { ValidateLandingPage } from "./page-objects.js/mainLandingPage.spec.js";
+import { baseUrl } from '../variables.js';
 
 describe('Validate Landing Page and redirection to Authentication Page', () => {
-    const landingMainPage  = new ValidateLandingPage()
+    const landingMainPage  = new ValidateLandingPage();
 
-    beforeEach(() => landingMainPage.navigate(baseUrl))
+    beforeEach(() => landingMainPage.navigate(baseUrl));
 
     it('Validate Logo, url and Sign In button in Landing Page', () => {
-        landingMainPage.validateMainPage()
-    });
+        landingMainPage.validateMainPage();
+    })
 
     it('Should navigate to Account Page by clicking SignIn', () => {
-        landingMainPage.navigateToAccountPage()
-    });
+        landingMainPage.navigateToAccountPage();
+    })
 
     it('Should navigate to Account Page by clicking SignIn', () => {
-        landingMainPage.navigateToAccountPage()
-    });
-
-});
+        landingMainPage.navigateToAccountPage();
+    })
+})
