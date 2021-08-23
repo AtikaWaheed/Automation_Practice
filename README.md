@@ -8,7 +8,7 @@ Pre reqs:
 ============================================
 1- Create project directory
  
- mkdir Automation_Practice
+       mkdir Automation_Practice
 
 2- Let’s start by creating the package.json
         
@@ -18,7 +18,7 @@ Pre reqs:
        
        $ npm install
 
-4- Letts Install the latest Cypress
+4- Let's Install the latest Cypress
       
       npm install cypress
  
